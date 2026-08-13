@@ -8,8 +8,9 @@
   <body>
     <p id="demo"></p>
     <script>
-      var fruits = ["Banana", "Orange", "Apple", "Mango"];
+      var fruits = ["Banana", "Orange", "Apple"];
       for (var i = 0; i < fruits.length; i++) {
+        if (i == 1) continue;
         document.getElementById("demo").innerHTML += fruits[i] + "<br>";
       }
     </script>
