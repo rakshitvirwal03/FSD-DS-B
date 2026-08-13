@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Armstrong Number Check</title>
+  </head>
+  <body>
+    <!-- The result will display right here on the page -->
+    <h1 id="output"></h1>
+
+    <script>
+      var n = 153; // Change to 153 to test a "YES", or keep 124 to see "NO"
+      var original = n;
+      var s = 0;
+
+      while (n > 0) {
+        var r = n % 10;
+        s = s + r * r * r;
+        n = Math.floor(n / 10);
+      }
+
+      var resultElement = document.getElementById("output");
+
+      if (s === original) {
+        resultElement.innerText = original + " is an Armstrong number! (YES)";
+      } else {
+        resultElement.innerText =
+          original + " is NOT an Armstrong number. (NO)";
+      }
+    </script>
+  </body>
+</html>
