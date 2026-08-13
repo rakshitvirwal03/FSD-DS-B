@@ -8,11 +8,18 @@
   <body>
     <p id="demo"></p>
     <script>
-      var fruits = ["Banana", "Orange", "Apple"];
-      for (var i = 0; i < fruits.length; i++) {
-        if (i == 1) continue;
-        document.getElementById("demo").innerHTML += fruits[i] + "<br>";
+      //**    var fruits = ["Banana", "Orange", "Apple"];
+      //**   for (var i = 0; i < fruits.length; i++) {
+      //**     if (i == 1) continue;
+      //**     document.getElementById("demo").innerHTML += fruits[i] + "<br>";
+      //**    }
+      <h1 id="demo"></h1>;
+      let i = 1;
+      while (i <= 5) {
+        document.write("<br> hello");
+        i++;
       }
+      document.getElementById("demo").innerHTML = "The loop has ended";
     </script>
   </body>
 </html>
