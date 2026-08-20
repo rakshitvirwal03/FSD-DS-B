@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Online Grocery Shop</title>
+
+    <style>
+      .card {
+        width: 300px;
+        padding: 20px;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin: 50px auto;
+        font-family: Arial;
+      }
+
+      input,
+      button {
+        width: 100%;
+        padding: 8px;
+        margin: 8px 0;
+        box-sizing: border-box;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      #bill {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <h2>Bill Generator</h2>
+
+      <p>Tea - ₹120</p>
+      <p>Coffee - ₹500</p>
+      <p>Ice - ₹500</p>
+      <p>Sugar - ₹700</p>
+
+      <input type="text" id="product" placeholder="Enter your product" />
+
+      <input type="number" id="quantity" placeholder="Enter quantity" />
+
+      <button onclick="generateBill()">Generate Bill</button>
+
+      <div id="bill"></div>
+    </div>
+
+    <script>
+      function generateBill() {
+        let product = document.getElementById("product").value;
+        let quantity = document.getElementById("quantity").value;
+
+        let price;
+
+        if (product == "tea") {
+          price = 120;
+        } else if (product == "coffee") {
+          price = 500;
+        } else if (product == "ice") {
+          price = 500;
+        } else if (product == "sugar") {
+          price = 700;
+        } else {
+          document.getElementById("bill").innerHTML = "Product not available";
+          return;
+        }
+
+        let total = price * quantity;
+
+        document.getElementById("bill").innerHTML =
+          "<h3>Bill</h3>" +
+          "Product: " +
+          product +
+          "<br>" +
+          "Price: ₹" +
+          price +
+          "<br>" +
+          "Quantity: " +
+          quantity +
+          "<br>" +
+          "<b>Total: ₹" +
+          total +
+          "</b>";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+      h2 {
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Online Grocery Shop</h1>
+    <h2>Tea</h2>
+
+    <script>
+      const products = [
+        { name: "Tea", price: 120 },
+        { name: "Coffee", price: 500 },
+        { name: "Rice", price: 600 },
+        { name: "Sugar", price: 700 },
+      ];
+
+      let totalPrice = 0;
+      for (let i = 0; i < products.length; i++) {
+        totalPrice += products[i].price;
+      }
+      document.write("Total Price: Rs " + totalPrice.toFixed(2));
+    </script>
+  </body>
+</html>

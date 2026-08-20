@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Online Grocery Shop</title>
+
+    <style>
+      .card {
+        width: 300px;
+        padding: 15px;
+        margin: 40px auto;
+        border: 1px solid #aaa;
+        border-radius: 8px;
+        font-family: Arial;
+      }
+
+      .product {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 8px 0;
+      }
+
+      .product img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+      }
+
+      input,
+      button {
+        width: 100%;
+        padding: 8px;
+        margin: 6px 0;
+        box-sizing: border-box;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      #bill {
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <h2>Online Grocery Bill</h2>
+
+      <div class="product">
+        <img src="images-6.jpeg" />
+        <span>Tea - ₹120</span>
+      </div>
+
+      <div class="product">
+        <img src="Coffee-iStock-Noi_Pattanan.jpg" />
+        <span>Coffee - ₹500</span>
+      </div>
+
+      <div class="product">
+        <img
+          src="top-view-raw-rice-inside-plate-dark-desk_179666-27235.jpg.avif"
+        />
+        <span>Rice - ₹500</span>
+      </div>
+
+      <div class="product">
+        <img src="360_F_222418209_hfwPSMzDi7pZWmCTn9NGdCJ3sijCGuQo.jpg" />
+        <span>Sugar - ₹700</span>
+      </div>
+
+      <input type="text" id="product" placeholder="Enter product" />
+
+      <input type="number" id="quantity" placeholder="Enter quantity" />
+
+      <button onclick="generateBill()">Generate Bill</button>
+
+      <div id="bill"></div>
+    </div>
+
+    <script>
+      function generateBill() {
+        let product = document.getElementById("product").value.toLowerCase();
+        let quantity = Number(document.getElementById("quantity").value);
+
+        let price;
+
+        if (product == "tea") {
+          price = 120;
+        } else if (product == "coffee") {
+          price = 500;
+        } else if (product == "ice") {
+          price = 500;
+        } else if (product == "sugar") {
+          price = 700;
+        } else {
+          document.getElementById("bill").innerHTML = "Product not available";
+          return;
+        }
+
+        let total = price * quantity;
+
+        document.getElementById("bill").innerHTML =
+          "<b>Bill</b><br>" +
+          "Product: " +
+          product +
+          "<br>" +
+          "Price: ₹" +
+          price +
+          "<br>" +
+          "Quantity: " +
+          quantity +
+          "<br>" +
+          "<b>Total: ₹" +
+          total +
+          "</b>";
+      }
+    </script>
+  </body>
+</html>
